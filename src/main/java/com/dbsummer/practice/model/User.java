@@ -10,6 +10,8 @@ public class User {
     private String email;
     private String password;
     private String role;
+    private boolean activated;
+    private String activationLink;
 
     public User() {
 
@@ -58,5 +60,21 @@ public class User {
 
     public void setRole(String role) {
         this.role = role;
+    }
+
+    public boolean isActivated() {
+        return activated;
+    }
+
+    public void setActivated(boolean activated) {
+        this.activated = activated;
+    }
+
+    public String getActivationLink() {
+        return activationLink;
+    }
+
+    public void setActivationLink(String activationLink) {
+        this.activationLink = activationLink;
     }
 }
