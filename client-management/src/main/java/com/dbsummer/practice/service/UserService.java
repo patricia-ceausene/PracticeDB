@@ -1,7 +1,6 @@
-package practice.service;
-
+package com.dbsummer.practice.service;
 import com.dbsummer.practice.model.User;
-import practice.repository.UserRepository;
+import com.dbsummer.practice.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -11,6 +10,7 @@ public class UserService {
     UserRepository userRepository;
 
     public boolean add(User user) {
+        user.setRole("client");
         userRepository.save(user);
         return true;
     }

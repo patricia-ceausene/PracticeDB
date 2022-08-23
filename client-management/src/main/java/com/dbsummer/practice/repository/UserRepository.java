@@ -1,4 +1,4 @@
-package practice.repository;
+package com.dbsummer.practice.repository;
 
 import com.dbsummer.practice.model.User;
 import org.springframework.data.jpa.repository.JpaRepository;

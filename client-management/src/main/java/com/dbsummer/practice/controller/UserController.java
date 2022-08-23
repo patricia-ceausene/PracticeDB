@@ -8,7 +8,8 @@ import com.auth0.jwt.exceptions.JWTVerificationException;
 import com.auth0.jwt.interfaces.Claim;
 import com.auth0.jwt.interfaces.DecodedJWT;
 import com.dbsummer.practice.model.User;
-import practice.service.UserService;
+import com.dbsummer.practice.service.AdminService;
+import com.dbsummer.practice.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
@@ -19,6 +20,8 @@ import java.util.Date;
 public class UserController {
     @Autowired
     UserService userService;
+    @Autowired
+    AdminService adminService;
 
     @PostMapping("register")
     @ResponseBody
@@ -35,6 +38,7 @@ public class UserController {
             user.setActivationLink(token);
             user.setActivated(false);
             userService.add(user);
+            adminService.add(user);
             //send email
 
         } catch (JWTCreationException exception){
