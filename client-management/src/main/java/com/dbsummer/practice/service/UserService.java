@@ -1,7 +1,7 @@
-package com.dbsummer.practice.service;
+package practice.service;
 
 import com.dbsummer.practice.model.User;
-import com.dbsummer.practice.repository.UserRepository;
+import practice.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
